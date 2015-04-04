@@ -1,12 +1,8 @@
-// Chapter 2 
-// Chess board
-var grid = "";;
 var line = ""
-var input = prompt("Enter a number");
-for (var i = 0; i< input; i++){
-  for(var j=0; j<input; j++){
+var size = prompt("Enter a number");
+for (var i = 0; i< size; i++){
+  for(var j=0; j<size; j++){
     if ((i%2 == 0)) {
-      
     	if ((j%2 == 0)) {
       		line += " ";
   		}
@@ -24,7 +20,5 @@ for (var i = 0; i< input; i++){
   	}
  }
   line += "\n";
-  grid += line;
-  line = "";
 }
-console.log(grid);
+console.log(line);
