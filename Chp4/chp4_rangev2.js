@@ -79,11 +79,7 @@ function range(start, end, step){
 //console.log(range(5, 2, -1));
 // → [5, 4, 3, 2]
 //console.log(range(1, 10, 2));
-//[1, 3, 5, 7, 9]
-	
-	
-	
-	
+//[1, 3, 5, 7, 9]	
   console.log(newArray);
 }
 
