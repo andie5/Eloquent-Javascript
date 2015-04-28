@@ -25,7 +25,7 @@ function listToArray(listToReverse){
   	return newArray;
 }
 
-console.loglistToArray({value: 10, rest: {value: 20, rest: null}});
+console.log(listToArray({value: 10, rest: {value: 20, rest: null}}));
 
 --------------------------------------------------------------
 function prepend(item, list){
@@ -57,6 +57,32 @@ function nth(listToCheck, position) {
    }
 }
 
+-----------------------------------------------
+
+//Recursive nth
+function nth(listToCheck, position) {
+	var lengthList = 0;
+     
+  for(var element in listToCheck){
+    console.log(element);
+    lengthList++;
+  }
+  console.log("position:" +position);
+  console.log("lengthList:" +lengthList);
+              
+  
+  if((position < 0) || (position > lengthList)) {
+    return undefined;
+  }
+  else if(position === 0){
+    return listToCheck.value;
+  }
+  else{
+    listToCheck = listToCheck.rest;
+    nth(listToCheck, position-1);
+  }
+}
+
 console.log(arrayToList([10, 20]));
 // → {value: 10, rest: {value: 20, rest: null}}
 console.log(listToArray(arrayToList([10, 20, 30])));
@@ -65,6 +91,21 @@ console.log(prepend(10, prepend(20, null)));
 // → {value: 10, rest: {value: 20, rest: null}}
 
 
-
-
+//Recursive nth - return the position of an item in the array
+function nth(listToCheck, position) {     
+  if((position < 0) || listToCheck === null) {
+    return undefined;
+  }
+  else if(position === 0){
+    return listToCheck.value;
+  }
+  else{
+    listToCheck = listToCheck.rest;
+    return nth(listToCheck, position-1);
+  }
+}
+console.log(nth(({value: 10, rest: {value: 20, rest: {value: 30, rest: null}}}),8));
+//console.log(nth(({value: 10, rest: {value: 20, rest: null}}), 1));
+// → 20
+//console.log(nth( {value: 10, rest: {value: 20, rest: {value: 30, rest: null}}}),1 );
 //{value: 10, rest: {value: 20, rest: {value: 30, rest: null}}}
