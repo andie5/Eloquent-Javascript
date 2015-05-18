@@ -40,19 +40,3 @@ var arrayValue = [1, 2, 3, 4, 5,9, 0];
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
 
-//Array to LIST
-
-function arrayToList(arrayToReverse){
-	var newArray = [];
-  	var list = {};
-  var current = {};
-  var len = arrayToReverse.length;
-  for(var i = 0; i< len; i++){
-    var current = {value: i, rest: list};
-    list += current;
-      //newArray.unshift(arrayToReverse[i]);  
-	}
-  	return list;
-}
-
-console.log(arrayToList([10, 20]));

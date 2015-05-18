@@ -1,9 +1,5 @@
 function deepEqual(x,y){
 	//Comparing non-objects
-  console.log(typeof x);
-  console.log(x);
-  console.log(typeof y);
-  console.log(y);
     if(typeof x == "object" && typeof y != "object"){
       return false;
     }
@@ -11,11 +7,9 @@ function deepEqual(x,y){
       return false;
     }
     else if (x === null || y === null){
-      console.log("Both objects were null");
 		return false;
     }
 	else if(x === y) {
-      console.log("about to return true");
 		return true;
 	}
 	//If we have objects we need to iterate through the object properties
@@ -34,7 +28,6 @@ function deepEqual(x,y){
 		}
 		else {
 			for(var element in x){
-              console.log("Looping through x element: "+element);
 				if(y.hasOwnProperty(element))
 				{
 					//This will return true before it has gone through all elements of the objects..as soon
